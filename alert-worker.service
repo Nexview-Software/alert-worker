@@ -1,0 +1,13 @@
+[Unit]
+Description=alert-worker - process sqs for mariadb
+Documentation=https://github.com/Nexview-Software/alert-worker
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+ExecStart=/usr/bin/node /home/ubuntu/alert-worker/index.js
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

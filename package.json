@@ -1,0 +1,17 @@
+{
+  "name": "alert-worker",
+  "version": "1.0.0",
+  "description": "Read from SQS and process into MariaDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alex Neises",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.875.0",
+    "dayjs": "^1.10.4",
+    "mariadb": "^2.5.3",
+    "sqs-consumer": "^5.5.0"
+  }
+}
