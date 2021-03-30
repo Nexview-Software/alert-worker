@@ -29,7 +29,7 @@ const app = Consumer.create({
         const significance = message.MessageAttributes.Significance.StringValue;
 
         const coords = coordinates.map(c => c.reverse());
-        const res = await sqlPool.query('INSERT INTO alerts(action, coordinates, eventEnd, eventStart, eventTrackingNumber, officeId, phenomena, productClass, significance, message) VALUE (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+        await sqlPool.query('INSERT INTO alerts(action, coordinates, eventEnd, eventStart, eventTrackingNumber, officeId, phenomena, productClass, significance, message) VALUE (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
             [action, JSON.stringify(coords), dayjs(eventEnd, 'YYMMDD[T]HHmm[Z]').format('YYYY-MM-DD HH:mm:ss'), dayjs(eventStart, 'YYMMDD[T]HHmm[Z]').format('YYYY-MM-DD HH:mm:ss'), eventTrackingNumber, officeId, phenomena, productClass, significance, _message]
         );
 	}
